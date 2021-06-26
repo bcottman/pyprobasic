@@ -27,33 +27,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-def logger(*a,**k):
-    """
-        Hide most of the paso machinery, so that developer focuses on their function or method.
 
-        Parameters:
-            array: (boolean) False
-                Pass a Pandas dataframe (False) or numpy array=True.  Mainly for compatibility
-                with scikit which requires arrays.
-
-        Parm/wrap Class Instance attibutes: these are attibutes of object_.fun (sef.x) set in this wrapper, if present in Parameter file
-
-    """
-
-    def decorator(fun):
-        @wraps(fun)
-        def wrapper(*args, **kwargs):
-            _fun_name = fun.__name__
-
-            result = fun(*args, **kwargs)
-            # post
-            logger.info('{} decotator invoked'.format(k))
-            logger.info('{} func invoked'.format(kwargs))
-            return result
-
-            return wrapper
-
-        return decorator
 
 
 ### Param class

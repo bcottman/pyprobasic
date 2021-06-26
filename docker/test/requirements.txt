@@ -10,5 +10,7 @@ pylint
 profiling
 line-profiler
 mypy
+nbdev
+loguru
 
 
